@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rigidBody;
     public float jumpHeight = 5f;
     public bool isGround = true;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,21 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && isGround) {
             Jump();
             isGround = false;
+            animator.SetBool("Jump", true);
+        }
+
+        if (Mathf.Abs(movement) > 0.1f)
+        {
+            animator.SetFloat("RunSpeed", 1f);
+        }
+        else if (Mathf.Abs(movement) < 0.1f)
+        {
+            animator.SetFloat("RunSpeed", 0f);
+        }
+
+        if (Input.GetKey(KeyCode.L))
+        {
+            animator.SetTrigger("Attack");
         }
     }
 
@@ -54,6 +70,7 @@ public class PlayerScript : MonoBehaviour
         if(collision.gameObject.tag == "ground")
         {
             isGround = true;
+            animator.SetBool("Jump", false);
         }
     }
 }
