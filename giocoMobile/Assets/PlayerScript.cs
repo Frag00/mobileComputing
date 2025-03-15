@@ -34,7 +34,7 @@ public class PlayerScript : MonoBehaviour
                 lookingRight = true;
             }
         }
-        if (Input.GetKey(KeyCode.Space) && isGround) {
+        if (Input.GetKeyDown(KeyCode.Space) && isGround) {
             Jump();
             isGround = false;
             animator.SetBool("Jump", true);
@@ -49,7 +49,7 @@ public class PlayerScript : MonoBehaviour
             animator.SetFloat("RunSpeed", 0f);
         }
 
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             animator.SetTrigger("Attack");
         }
