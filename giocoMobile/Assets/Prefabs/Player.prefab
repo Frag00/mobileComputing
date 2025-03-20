@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6155212825831687218}
   - component: {fileID: 7958200080005261725}
   - component: {fileID: 5570172591546774305}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,6 +176,7 @@ MonoBehaviour:
   rigidBody: {fileID: 7602909281235613956}
   jumpHeight: 10
   isGround: 1
+  animator: {fileID: 5570172591546774305}
 --- !u!95 &5570172591546774305
 Animator:
   serializedVersion: 5
