@@ -12,7 +12,7 @@ public class FirstEnemySkeletonScript : MonoBehaviour
     public bool inRange = false;
     public Transform player;
     public float attackRange = 10f;
-    public float retrieveDistance = 2.5f;
+    public float retrieveDistance = 1.7f;
     public float chaseSpeed = 4f;
     public Animator animator;
     public Transform attackPoint;
@@ -84,7 +84,10 @@ public class FirstEnemySkeletonScript : MonoBehaviour
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
         if (collInfo)
         {
-            Debug.Log(collInfo.transform.name);
+            if (collInfo.gameObject.GetComponent<PlayerScript>() != null)
+            {
+                collInfo.gameObject.GetComponent<PlayerScript>().takeDamage(1);
+            }
         }
     }
     private void OnDrawGizmosSelected()

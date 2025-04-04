@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1226636860964530962}
   - component: {fileID: 6898813796812053224}
   - component: {fileID: 124287786781224342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirstEnemySkeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}

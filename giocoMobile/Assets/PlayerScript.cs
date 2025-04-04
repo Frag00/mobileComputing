@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
+    public int maxHealth = 3;
+    public Text health;
     public float moveSpeed = 5f;
     private float movement;
     private bool lookingRight = true;
@@ -11,6 +14,10 @@ public class PlayerScript : MonoBehaviour
     public float jumpHeight = 5f;
     public bool isGround = true;
     public Animator animator;
+
+    public Transform attackPoint;
+    public float attackRadius = 1f;
+    public LayerMask attackLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +27,13 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(maxHealth <= 0)
+        {
+            Die();
+        }
+
+        health.text = maxHealth.ToString();
+
         movement = Input.GetAxis("Horizontal");
 
         if(movement < 0 && lookingRight)
@@ -72,5 +86,32 @@ public class PlayerScript : MonoBehaviour
             isGround = true;
             animator.SetBool("Jump", false);
         }
+    }
+
+    public void Attack()
+    {
+        Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
+        if (collInfo)
+        {
+            Debug.Log(collInfo.gameObject.name + "Takes Damage");
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) {  return; }
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+    }
+
+    public void takeDamage(int damage)
+    {
+        if(maxHealth <= 0) { return; }
+        maxHealth -= damage;
+
+    }
+
+    public void Die()
+    {
+        Debug.Log("Die");
     }
 }
