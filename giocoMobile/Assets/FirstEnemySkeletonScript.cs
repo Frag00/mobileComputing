@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FirstEnemySkeletonScript : MonoBehaviour
 {
+    public int maxHealth = 5;
     public float moveSpeed = 2f;
     public Transform checkPoint;
     public float distance = 1f;
@@ -28,6 +30,17 @@ public class FirstEnemySkeletonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(FindObjectOfType<GameManager>().isGameActive == false)
+        {
+            return;
+        }
+
+        if(maxHealth <= 0)
+        {
+            Die();
+        }
+
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             inRange = true;
@@ -90,6 +103,15 @@ public class FirstEnemySkeletonScript : MonoBehaviour
             }
         }
     }
+
+    public void TakeDamage(int damage)
+    {
+        if (maxHealth <= 0) {
+            return;
+        }
+        animator.SetTrigger("TakesDamage");
+        maxHealth -= damage;
+    }
     private void OnDrawGizmosSelected()
     {
         if (checkPoint == null) {  return; }
@@ -101,5 +123,13 @@ public class FirstEnemySkeletonScript : MonoBehaviour
         if(attackPoint == null) { return;}
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(attackPoint.position,attackRadius);  
+    }
+
+    public void Die()
+    {
+        Debug.Log(this.transform.name + " Died");
+        animator.SetBool("Died", true);
+        Destroy(this.gameObject,1);
+        
     }
 }

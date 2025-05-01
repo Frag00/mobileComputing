@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
+    public Text gemText;
+    public int currentGems = 0;
     public int maxHealth = 3;
     public Text health;
     public float moveSpeed = 5f;
@@ -32,6 +34,7 @@ public class PlayerScript : MonoBehaviour
             Die();
         }
 
+        gemText.text = currentGems.ToString();
         health.text = maxHealth.ToString();
 
         movement = Input.GetAxis("Horizontal");
@@ -93,7 +96,10 @@ public class PlayerScript : MonoBehaviour
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
         if (collInfo)
         {
-            Debug.Log(collInfo.gameObject.name + "Takes Damage");
+            if(collInfo.gameObject.GetComponent<FirstEnemySkeletonScript>() != null)
+            {
+                collInfo.gameObject.GetComponent<FirstEnemySkeletonScript>().TakeDamage(1);
+            }
         }
     }
 
@@ -106,12 +112,26 @@ public class PlayerScript : MonoBehaviour
     public void takeDamage(int damage)
     {
         if(maxHealth <= 0) { return; }
+        animator.SetTrigger("PTakesDamage");
         maxHealth -= damage;
 
     }
 
+    void OnTriggerEnter2D (Collider2D other)
+    {
+        if(other.gameObject.tag == "Gem")
+        {
+            currentGems ++;
+            other.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collected");
+            Destroy(other.gameObject,1f);
+        }
+    }
+
     public void Die()
     {
-        Debug.Log("Die");
+        Debug.Log("Player Died");
+        animator.SetBool("isDead", true);
+        FindObjectOfType<GameManager>().isGameActive = false;
+        Destroy(this.gameObject);
     }
 }
