@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd6d843d2af0d5f4f83a9ef92837dd17
+guid: 74f61b9d1af446a439fb91251f8067a4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Health_0
+      name: potion_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 192
-        width: 30
-        height: 47
+        x: 4
+        y: 2
+        width: 8
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4680179f54948f74384a4a77514e0c4c
-      internalID: 1505061267
+      spriteID: ad658a5bbbf95ae488c98f6ef7d6b667
+      internalID: -1805842170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health_1
+      name: potion_1
       rect:
         serializedVersion: 2
-        x: 176
-        y: 192
-        width: 30
-        height: 47
+        x: 20
+        y: 3
+        width: 8
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f578a87b18f84f48900a89da02e8590
-      internalID: -912079131
+      spriteID: 352432a4673e1704093f41c56a30c2c1
+      internalID: -2107908577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health_2
+      name: potion_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 128
-        width: 30
-        height: 47
+        x: 36
+        y: 2
+        width: 8
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87179eac2b5f7454a818fb55377a7624
-      internalID: -1705248389
+      spriteID: 3499aec96622e354aa32320ae9034628
+      internalID: 1672317797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health_3
+      name: potion_3
       rect:
         serializedVersion: 2
-        x: 176
-        y: 128
-        width: 30
-        height: 47
+        x: 52
+        y: 1
+        width: 8
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,92 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14d0bfc2073a74c43a0521a1b01d5e76
-      internalID: 1542200953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_4
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 64
-        width: 31
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6e7393ab745e4b44a8da849eb3bda25
-      internalID: -1842142690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_5
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 64
-        width: 33
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a62dc603cc82554aa0db46e1ff92a7f
-      internalID: -1485891849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_6
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 36
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1297be2ab092cc4abff6b55b3e31b82
-      internalID: 1677347887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_7
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 0
-        width: 37
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d28a82b43ab33774bae67e804b8fc332
-      internalID: 1663691521
+      spriteID: 3fe720d0664d7bf4881fba2bb4175a7d
+      internalID: 254897594
       vertices: []
       indices: 
       edges: []
@@ -314,14 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Health_0: 1505061267
-      Health_1: -912079131
-      Health_2: -1705248389
-      Health_3: 1542200953
-      Health_4: -1842142690
-      Health_5: -1485891849
-      Health_6: 1677347887
-      Health_7: 1663691521
+      potion_0: -1805842170
+      potion_1: -2107908577
+      potion_2: 1672317797
+      potion_3: 254897594
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

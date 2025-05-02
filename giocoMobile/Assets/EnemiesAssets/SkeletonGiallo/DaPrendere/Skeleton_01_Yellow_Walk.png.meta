@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd6d843d2af0d5f4f83a9ef92837dd17
+guid: 37c47849e9f0ab74c999c3d65ab126e7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,169 +136,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Health_0
+      name: Skeleton_01_Yellow_Walk_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 192
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4680179f54948f74384a4a77514e0c4c
-      internalID: 1505061267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_1
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 192
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f578a87b18f84f48900a89da02e8590
-      internalID: -912079131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 128
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87179eac2b5f7454a818fb55377a7624
-      internalID: -1705248389
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_3
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 128
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14d0bfc2073a74c43a0521a1b01d5e76
-      internalID: 1542200953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_4
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 64
+        x: 36
+        y: 0
         width: 31
-        height: 47
+        height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6e7393ab745e4b44a8da849eb3bda25
-      internalID: -1842142690
+      spriteID: 90a006a47f9b8f64ea6e2fb5aacb7142
+      internalID: -1093783922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health_5
+      name: Skeleton_01_Yellow_Walk_1
       rect:
         serializedVersion: 2
-        x: 176
-        y: 64
+        x: 131
+        y: 0
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232324bb93d65fd4380ad5914982c078
+      internalID: 2018947728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 0
         width: 33
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a62dc603cc82554aa0db46e1ff92a7f
-      internalID: -1485891849
+      spriteID: ec658e2bf688c0042bb9718b813f6119
+      internalID: -1067776109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health_6
+      name: Skeleton_01_Yellow_Walk_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 322
+        y: 0
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23045b1b7fe248948b157c0c52a049c4
+      internalID: 1657213256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 417
         y: 0
         width: 36
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1297be2ab092cc4abff6b55b3e31b82
-      internalID: 1677347887
+      spriteID: c5de5cd77ee545a4a9c375426cfff2ee
+      internalID: -1283021673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health_7
+      name: Skeleton_01_Yellow_Walk_5
       rect:
         serializedVersion: 2
-        x: 176
+        x: 511
         y: 0
-        width: 37
-        height: 46
+        width: 39
+        height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28a82b43ab33774bae67e804b8fc332
-      internalID: 1663691521
+      spriteID: 41cc58f9210fe0741a9b1c9eea010c73
+      internalID: -59735907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 0
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7da9926bca31ca4b8bd9d8bf2acc5d4
+      internalID: 500777973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 0
+        width: 35
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c260a659212d74b9ef9fca87b8bf95
+      internalID: -2054714624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Walk_8
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 0
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498bcb6d2524fa74cb31c117d0759025
+      internalID: 1521235959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Walk_9
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 0
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c12b2cf7ab627f40a0238cbf6328e76
+      internalID: -1711164988
       vertices: []
       indices: 
       edges: []
@@ -314,14 +356,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Health_0: 1505061267
-      Health_1: -912079131
-      Health_2: -1705248389
-      Health_3: 1542200953
-      Health_4: -1842142690
-      Health_5: -1485891849
-      Health_6: 1677347887
-      Health_7: 1663691521
+      Skeleton_01_Yellow_Walk_0: -1093783922
+      Skeleton_01_Yellow_Walk_1: 2018947728
+      Skeleton_01_Yellow_Walk_2: -1067776109
+      Skeleton_01_Yellow_Walk_3: 1657213256
+      Skeleton_01_Yellow_Walk_4: -1283021673
+      Skeleton_01_Yellow_Walk_5: -59735907
+      Skeleton_01_Yellow_Walk_6: 500777973
+      Skeleton_01_Yellow_Walk_7: -2054714624
+      Skeleton_01_Yellow_Walk_8: 1521235959
+      Skeleton_01_Yellow_Walk_9: -1711164988
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

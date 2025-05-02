@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ground
   - Gem
+  - VictoryPoint
+  - Potion
   layers:
   - Default
   - TransparentFX

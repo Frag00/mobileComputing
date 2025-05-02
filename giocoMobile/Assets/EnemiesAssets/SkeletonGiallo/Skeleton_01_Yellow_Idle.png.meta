@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd6d843d2af0d5f4f83a9ef92837dd17
+guid: 516ba375ac581c14aafe297c4ff67be2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,138 +136,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Health_0
+      name: Skeleton_01_Yellow_Idle_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 192
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4680179f54948f74384a4a77514e0c4c
-      internalID: 1505061267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_1
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 192
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f578a87b18f84f48900a89da02e8590
-      internalID: -912079131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 128
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87179eac2b5f7454a818fb55377a7624
-      internalID: -1705248389
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_3
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 128
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14d0bfc2073a74c43a0521a1b01d5e76
-      internalID: 1542200953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_4
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 64
-        width: 31
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6e7393ab745e4b44a8da849eb3bda25
-      internalID: -1842142690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_5
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 64
-        width: 33
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a62dc603cc82554aa0db46e1ff92a7f
-      internalID: -1485891849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_6
-      rect:
-        serializedVersion: 2
-        x: 48
+        x: 34
         y: 0
-        width: 36
+        width: 34
         height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -276,19 +150,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1297be2ab092cc4abff6b55b3e31b82
-      internalID: 1677347887
+      spriteID: ba5f329d41debeb4184911ee30c790fc
+      internalID: -1787457563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health_7
+      name: Skeleton_01_Yellow_Idle_1
       rect:
         serializedVersion: 2
-        x: 176
+        x: 130
         y: 0
-        width: 37
+        width: 34
         height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -297,8 +171,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28a82b43ab33774bae67e804b8fc332
-      internalID: 1663691521
+      spriteID: 03bff08a02aa3c140b2cd3358875a9cb
+      internalID: -1082076504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 0
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24bee3be433237642bc2a3cbe05d1c75
+      internalID: -362627366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b52085f21dc104f88e7fbcdfc0b3d0
+      internalID: -867824747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 0
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf37c41d80520a47a0edcb12b7ff771
+      internalID: -1132266235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 0
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a4b2ff779e7d94fabd8dc5903f873d
+      internalID: 2127075345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 0
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ef753e76b43af418f1c4ac6c0c7891
+      internalID: 211174979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 0
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a42127c6768ce41925997146e214ff
+      internalID: 648927237
       vertices: []
       indices: 
       edges: []
@@ -314,14 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Health_0: 1505061267
-      Health_1: -912079131
-      Health_2: -1705248389
-      Health_3: 1542200953
-      Health_4: -1842142690
-      Health_5: -1485891849
-      Health_6: 1677347887
-      Health_7: 1663691521
+      Skeleton_01_Yellow_Idle_0: -1787457563
+      Skeleton_01_Yellow_Idle_1: -1082076504
+      Skeleton_01_Yellow_Idle_2: -362627366
+      Skeleton_01_Yellow_Idle_3: -867824747
+      Skeleton_01_Yellow_Idle_4: -1132266235
+      Skeleton_01_Yellow_Idle_5: 2127075345
+      Skeleton_01_Yellow_Idle_6: 211174979
+      Skeleton_01_Yellow_Idle_7: 648927237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

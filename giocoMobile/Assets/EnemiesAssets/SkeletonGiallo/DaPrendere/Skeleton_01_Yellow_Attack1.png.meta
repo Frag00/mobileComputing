@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd6d843d2af0d5f4f83a9ef92837dd17
+guid: e7799e18f384f3645a0451985c8466b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,12 +136,33 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Health_0
+      name: Skeleton_01_Yellow_Attack1_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 192
-        width: 30
+        x: 34
+        y: 0
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ae4b78ddc063949af35f610cf855d4
+      internalID: -1097632477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Attack1_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 22
         height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -150,103 +171,124 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4680179f54948f74384a4a77514e0c4c
-      internalID: 1505061267
+      spriteID: 1cfa432088acb414d86606337dfa1952
+      internalID: 165074507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health_1
+      name: Skeleton_01_Yellow_Attack1_2
       rect:
         serializedVersion: 2
-        x: 176
-        y: 192
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f578a87b18f84f48900a89da02e8590
-      internalID: -912079131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 128
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87179eac2b5f7454a818fb55377a7624
-      internalID: -1705248389
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_3
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 128
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14d0bfc2073a74c43a0521a1b01d5e76
-      internalID: 1542200953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_4
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 64
-        width: 31
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6e7393ab745e4b44a8da849eb3bda25
-      internalID: -1842142690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_5
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 64
+        x: 213
+        y: 0
         width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec4e645d1fb7824ba317d438e85a9dc
+      internalID: 1282463311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Attack1_3
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5291018e4c6ed4a9f6372d3f529053
+      internalID: 2135704676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Attack1_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0755ab167ff99ae43b3bb0ced6617b1a
+      internalID: 1875958501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Attack1_5
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 0
+        width: 65
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407f3937b4bedc341b9f06897cbab63a
+      internalID: 898531997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Attack1_6
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 0
+        width: 61
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45bdc8d474726394ba6863f86c9c9c87
+      internalID: 524033882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Attack1_7
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 0
+        width: 58
         height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -255,19 +297,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a62dc603cc82554aa0db46e1ff92a7f
-      internalID: -1485891849
+      spriteID: 3f0026b67e6fd1e4288020fa3d059589
+      internalID: 367333273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health_6
+      name: Skeleton_01_Yellow_Attack1_8
       rect:
         serializedVersion: 2
-        x: 48
+        x: 800
         y: 0
-        width: 36
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0496c16343d2df24cb3023a8174baa22
+      internalID: -640084215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Attack1_9
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 0
+        width: 34
         height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -276,29 +339,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1297be2ab092cc4abff6b55b3e31b82
-      internalID: 1677347887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_7
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 0
-        width: 37
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d28a82b43ab33774bae67e804b8fc332
-      internalID: 1663691521
+      spriteID: c3bd4447742531748a61b15f9c47c558
+      internalID: -2112264462
       vertices: []
       indices: 
       edges: []
@@ -314,14 +356,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Health_0: 1505061267
-      Health_1: -912079131
-      Health_2: -1705248389
-      Health_3: 1542200953
-      Health_4: -1842142690
-      Health_5: -1485891849
-      Health_6: 1677347887
-      Health_7: 1663691521
+      Skeleton_01_Yellow_Attack1_0: -1097632477
+      Skeleton_01_Yellow_Attack1_1: 165074507
+      Skeleton_01_Yellow_Attack1_2: 1282463311
+      Skeleton_01_Yellow_Attack1_3: 2135704676
+      Skeleton_01_Yellow_Attack1_4: 1875958501
+      Skeleton_01_Yellow_Attack1_5: 898531997
+      Skeleton_01_Yellow_Attack1_6: 524033882
+      Skeleton_01_Yellow_Attack1_7: 367333273
+      Skeleton_01_Yellow_Attack1_8: -640084215
+      Skeleton_01_Yellow_Attack1_9: -2112264462
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

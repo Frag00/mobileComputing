@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd6d843d2af0d5f4f83a9ef92837dd17
+guid: ee7b1fad798d0804cbf098c192d98089
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,169 +136,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Health_0
+      name: Skeleton_01_Yellow_Hurt_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 192
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4680179f54948f74384a4a77514e0c4c
-      internalID: 1505061267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_1
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 192
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f578a87b18f84f48900a89da02e8590
-      internalID: -912079131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 128
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87179eac2b5f7454a818fb55377a7624
-      internalID: -1705248389
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_3
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 128
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14d0bfc2073a74c43a0521a1b01d5e76
-      internalID: 1542200953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_4
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 64
-        width: 31
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6e7393ab745e4b44a8da849eb3bda25
-      internalID: -1842142690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_5
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 64
-        width: 33
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a62dc603cc82554aa0db46e1ff92a7f
-      internalID: -1485891849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Health_6
-      rect:
-        serializedVersion: 2
-        x: 48
+        x: 34
         y: 0
-        width: 36
+        width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1297be2ab092cc4abff6b55b3e31b82
-      internalID: 1677347887
+      spriteID: 641ac90801bee804b83f18c1d01f5e06
+      internalID: -1225799772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Health_7
+      name: Skeleton_01_Yellow_Hurt_1
       rect:
         serializedVersion: 2
-        x: 176
+        x: 126
         y: 0
-        width: 37
-        height: 46
+        width: 27
+        height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d28a82b43ab33774bae67e804b8fc332
-      internalID: 1663691521
+      spriteID: 2869566a2319e5043b610197a5517109
+      internalID: 1880672805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Hurt_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 26
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da2d480564024847b6c4c182c8c625a
+      internalID: -1857841776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Hurt_3
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c745fcc3fb497a8449ccad69c1dc8d15
+      internalID: -2052499717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_01_Yellow_Hurt_4
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 0
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b0ebd2fdfe2f948863cbdc4dfdcf3b
+      internalID: -1877276
       vertices: []
       indices: 
       edges: []
@@ -314,14 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Health_0: 1505061267
-      Health_1: -912079131
-      Health_2: -1705248389
-      Health_3: 1542200953
-      Health_4: -1842142690
-      Health_5: -1485891849
-      Health_6: 1677347887
-      Health_7: 1663691521
+      Skeleton_01_Yellow_Hurt_0: -1225799772
+      Skeleton_01_Yellow_Hurt_1: 1880672805
+      Skeleton_01_Yellow_Hurt_2: -1857841776
+      Skeleton_01_Yellow_Hurt_3: -2052499717
+      Skeleton_01_Yellow_Hurt_4: -1877276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

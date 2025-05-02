@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841be69344d2f7547b131cfb38551e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 5
   moveSpeed: 2
   checkPoint: {fileID: 1622987733100578332}
   distance: 1
@@ -215,7 +216,7 @@ MonoBehaviour:
   inRange: 0
   player: {fileID: 0}
   attackRange: 10
-  retrieveDistance: 2.5
+  retrieveDistance: 1.7
   chaseSpeed: 3
   animator: {fileID: 124287786781224342}
   attackPoint: {fileID: 1421106453325107899}
@@ -269,7 +270,7 @@ Transform:
   m_GameObject: {fileID: 8948073202263584199}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.32, y: -0.47, z: 0}
+  m_LocalPosition: {x: -1.16, y: -0.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

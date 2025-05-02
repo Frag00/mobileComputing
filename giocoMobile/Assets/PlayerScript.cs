@@ -5,9 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
+    public int vitaMassimaTotale = 5;
+    public Text potionText;
+    public int currentPotions = 0;
     public Text gemText;
     public int currentGems = 0;
-    public int maxHealth = 3;
+    public int maxHealth = 5;
     public Text health;
     public float moveSpeed = 5f;
     private float movement;
@@ -34,6 +37,19 @@ public class PlayerScript : MonoBehaviour
             Die();
         }
 
+        // Per consumare una pozione e recuperare vita
+        if(maxHealth<vitaMassimaTotale && currentPotions > 0)
+        {
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                animator.SetTrigger("Potion");
+                currentPotions--;
+                maxHealth++;
+            }
+        }
+
+        // gestione di tutti i testi relativi a variabili
+        potionText.text = currentPotions.ToString();
         gemText.text = currentGems.ToString();
         health.text = maxHealth.ToString();
 
@@ -121,9 +137,28 @@ public class PlayerScript : MonoBehaviour
     {
         if(other.gameObject.tag == "Gem")
         {
+            Collider2D gemCollider = other.GetComponent<Collider2D>();
+            if (gemCollider != null) { 
+                gemCollider.enabled = false;
+            }
             currentGems ++;
             other.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collected");
             Destroy(other.gameObject,1f);
+        }
+        if (other.gameObject.tag == "VictoryPoint")
+        {
+            FindObjectOfType<SceneManagement>().LoadLevel();
+        }
+        if(other.gameObject.tag == "Potion")
+        {
+            Collider2D potionCollider = other.GetComponent<Collider2D>();
+            if (potionCollider != null)
+            {
+                potionCollider.enabled = false;
+            }
+            currentPotions++;
+            other.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("PCollected");
+            Destroy(other.gameObject, 0.5f);
         }
     }
 
