@@ -7,4 +7,11 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("Level2");
     }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    
 }
