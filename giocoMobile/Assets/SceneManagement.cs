@@ -13,5 +13,14 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
-    
+    public void LoadMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
+    /* per il respawn ******************************************/
+    public Collider2D collider;
+    private bool active = true;
+    private Vector2 respawnPoint;
+    public Collider2D ultimoCheckPoint;
+    // ***********************************************************
     public int vitaMassimaTotale = 5;
     public Text potionText;
     public int currentPotions = 0;
@@ -26,12 +32,17 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //*************************************************
+        // respawn e morte
+        collider = GetComponent<Collider2D>();
+        SetRespawnPoint(transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!active) { return; }
+
         if(maxHealth <= 0)
         {
             Die();
@@ -46,6 +57,18 @@ public class PlayerScript : MonoBehaviour
                 currentPotions--;
                 maxHealth++;
             }
+        }
+
+        // per il checkpoint
+        if (ultimoCheckPoint!=null && Input.GetKeyDown(KeyCode.F))
+        {
+            //animazione preghiera
+            animator.SetTrigger("Pray");
+            // setrespawn
+            SetRespawnPoint(ultimoCheckPoint.transform.position);
+            //ridai vita
+            maxHealth = vitaMassimaTotale;
+
         }
 
         // gestione di tutti i testi relativi a variabili
@@ -160,6 +183,19 @@ public class PlayerScript : MonoBehaviour
             other.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("PCollected");
             Destroy(other.gameObject, 0.5f);
         }
+        if(other.gameObject.tag == "Kneeler")
+        {
+            ultimoCheckPoint = other;
+            
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other == ultimoCheckPoint)
+        {
+            ultimoCheckPoint = null;
+        }
     }
 
     public void Die()
@@ -168,5 +204,46 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("isDead", true);
         FindObjectOfType<GameManager>().isGameActive = false;
         Destroy(this.gameObject);
+    }
+
+
+
+    // da qui in poi morte con respawn 
+    public void MiniJump()
+    {
+        rigidBody.AddForce(new Vector2(0f, jumpHeight/2), ForceMode2D.Impulse);
+    }
+    public void DieByCollision()
+    {
+        if (maxHealth > 1)
+        {
+            active = false;
+            collider.enabled = false;
+            MiniJump();
+            StartCoroutine(Respawn());
+            maxHealth--;
+            if (currentGems > 0) currentGems--;
+        }
+        else
+        { /*    implementare game over */
+            active = false;
+            collider.enabled = false;
+            MiniJump();
+            Die();
+        }
+
+    }
+    public void SetRespawnPoint(Vector2 position)
+    {
+        respawnPoint = position;
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(0.3f);
+        transform.position = respawnPoint;
+        active = true;
+        collider.enabled=true;
+        MiniJump();
     }
 }
