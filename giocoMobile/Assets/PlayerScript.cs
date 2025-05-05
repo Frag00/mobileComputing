@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
+
+    // per farlo stare fermo durante le animazioni di preghiera e pozione
+    private bool canmove = true;
+
     /* per il respawn ******************************************/
     public Collider2D collider;
     private bool active = true;
@@ -53,6 +57,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.N))
             {
+                canmove = false;
                 animator.SetTrigger("Potion");
                 currentPotions--;
                 maxHealth++;
@@ -62,6 +67,8 @@ public class PlayerScript : MonoBehaviour
         // per il checkpoint
         if (ultimoCheckPoint!=null && Input.GetKeyDown(KeyCode.F))
         {
+            //disabilita movimento durante l'animazione
+            canmove=false;
             //animazione preghiera
             animator.SetTrigger("Pray");
             // setrespawn
@@ -76,34 +83,38 @@ public class PlayerScript : MonoBehaviour
         gemText.text = currentGems.ToString();
         health.text = maxHealth.ToString();
 
-        movement = Input.GetAxis("Horizontal");
+        
+            movement = Input.GetAxis("Horizontal");
 
-        if(movement < 0 && lookingRight)
-        {
-            transform.eulerAngles = new Vector3(0f,-180f,0f);
-            lookingRight = false;
-        }
-        else
-        {
-            if (!lookingRight && movement>0) {
-                transform.eulerAngles = new Vector3(0f, 0f, 0f);
-                lookingRight = true;
+            if (movement < 0 && lookingRight)
+            {
+                transform.eulerAngles = new Vector3(0f, -180f, 0f);
+                lookingRight = false;
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && isGround) {
-            Jump();
-            isGround = false;
-            animator.SetBool("Jump", true);
-        }
+            else
+            {
+                if (!lookingRight && movement > 0)
+                {
+                    transform.eulerAngles = new Vector3(0f, 0f, 0f);
+                    lookingRight = true;
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Space) && isGround && canmove)
+            {
+                Jump();
+                isGround = false;
+                animator.SetBool("Jump", true);
+            }
 
-        if (Mathf.Abs(movement) > 0.1f)
-        {
-            animator.SetFloat("RunSpeed", 1f);
-        }
-        else if (Mathf.Abs(movement) < 0.1f)
-        {
-            animator.SetFloat("RunSpeed", 0f);
-        }
+            if (Mathf.Abs(movement) > 0.1f)
+            {
+                animator.SetFloat("RunSpeed", 1f);
+            }
+            else if (Mathf.Abs(movement) < 0.1f)
+            {
+                animator.SetFloat("RunSpeed", 0f);
+            }
+        
 
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -113,8 +124,13 @@ public class PlayerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position += new Vector3(movement, 0f, 0f) * Time.fixedDeltaTime * moveSpeed;
+        if (canmove)
+        {
+            transform.position += new Vector3(movement, 0f, 0f) * Time.fixedDeltaTime * moveSpeed;
+        }
     }
+
+    public void EnableMovement() { canmove = true; }
 
     void Jump()
     {

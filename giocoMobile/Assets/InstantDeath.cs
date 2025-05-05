@@ -10,5 +10,9 @@ public class InstantDeath : MonoBehaviour
         {
             player.DieByCollision();
         }
+        var enemy = other.collider.GetComponent<FirstEnemySkeletonScript>();
+        if (enemy != null) {
+            enemy.Die();
+        }
     }
 }
