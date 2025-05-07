@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     private bool canmove = true;
 
     /* per il dash */
+    private bool isDashUnlocked=false;
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 7f;
@@ -123,8 +124,9 @@ public class PlayerScript : MonoBehaviour
 
             // per il dash
 
-            if(Input.GetKeyDown(KeyCode.C) && canDash)
+            if(Input.GetKeyDown(KeyCode.C) && canDash && canmove && isDashUnlocked)
         {
+
             StartCoroutine(Dash());
         }
             /////////////////
@@ -318,6 +320,7 @@ public class PlayerScript : MonoBehaviour
         if(lookingRight) rigidBody.velocity = new Vector2(1 * dashingPower, 0f);
         else rigidBody.velocity = new Vector2(-1 * dashingPower, 0f);
         tr.emitting = true;
+        SoundEffectManager.Play("PlayerDash");
         yield return new WaitForSeconds(dashingTime);
         rigidBody.gravityScale = originalGravity;
         isDashing=false;
@@ -325,4 +328,37 @@ public class PlayerScript : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+
+    #region Save And Load
+
+    public void Save(ref PlayerSaveData data)
+    {
+        data.Position = respawnPoint;
+        data.DashUnlock = isDashUnlocked;
+        data.gems = currentGems;
+        data.hearts = maxHealth;
+        data.potions = currentPotions;
+    }
+
+    public void Load(PlayerSaveData data)
+    {
+        transform.position = data.Position;
+        isDashUnlocked = data.DashUnlock;
+        currentGems = data.gems;
+        currentPotions = data.potions;
+        maxHealth = data.hearts;
+    }
+
+    #endregion
+
+}
+
+[System.Serializable]
+public struct PlayerSaveData
+{
+    public Vector3 Position;
+    public bool DashUnlock;
+    public int gems;
+    public int hearts;
+    public int potions;
 }
