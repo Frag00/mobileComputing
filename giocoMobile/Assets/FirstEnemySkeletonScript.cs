@@ -94,6 +94,7 @@ public class FirstEnemySkeletonScript : MonoBehaviour
 
     public void Attack()
     {
+        SoundEffectManager.Play("EnemyAttack");
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
         if (collInfo)
         {
@@ -104,12 +105,18 @@ public class FirstEnemySkeletonScript : MonoBehaviour
         }
     }
 
+    public void PlayChasingSound()
+    {
+        SoundEffectManager.Play("EnemyChase");
+    }
+
     public void TakeDamage(int damage)
     {
         if (maxHealth <= 0) {
             return;
         }
         animator.SetTrigger("TakesDamage");
+        SoundEffectManager.Play("EnemyHurt");
         maxHealth -= damage;
     }
     private void OnDrawGizmosSelected()
@@ -127,6 +134,7 @@ public class FirstEnemySkeletonScript : MonoBehaviour
 
     public void Die()
     {
+
         Debug.Log(this.transform.name + " Died");
         animator.SetBool("Died", true);
         Destroy(this.gameObject,1);

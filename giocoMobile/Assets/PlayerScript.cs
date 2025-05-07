@@ -9,6 +9,15 @@ public class PlayerScript : MonoBehaviour
     // per farlo stare fermo durante le animazioni di preghiera e pozione
     private bool canmove = true;
 
+    /* per il dash */
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 7f;
+    private float dashingTime = 0.1f;
+    private float dashingCooldown = 1f;
+    [SerializeField] private TrailRenderer tr;
+
+
     /* per il respawn ******************************************/
     public Collider2D collider;
     private bool active = true;
@@ -36,6 +45,8 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // per il trailrenderer
+        tr = GetComponent<TrailRenderer>();
         //*************************************************
         // respawn e morte
         collider = GetComponent<Collider2D>();
@@ -52,25 +63,29 @@ public class PlayerScript : MonoBehaviour
             Die();
         }
 
+        if (isDashing) return;
         // Per consumare una pozione e recuperare vita
         if(maxHealth<vitaMassimaTotale && currentPotions > 0)
         {
-            if (Input.GetKeyDown(KeyCode.N))
+            if (Input.GetKeyDown(KeyCode.N) && isGround)
             {
                 canmove = false;
                 animator.SetTrigger("Potion");
+                SoundEffectManager.Play("PlayerHeal");
                 currentPotions--;
                 maxHealth++;
             }
         }
 
         // per il checkpoint
-        if (ultimoCheckPoint!=null && Input.GetKeyDown(KeyCode.F))
+        if (ultimoCheckPoint!=null && Input.GetKeyDown(KeyCode.F) && isGround)
         {
             //disabilita movimento durante l'animazione
             canmove=false;
             //animazione preghiera
             animator.SetTrigger("Pray");
+            // riproduci suono preghiera
+            SoundEffectManager.Play("PlayerPray");
             // setrespawn
             SetRespawnPoint(ultimoCheckPoint.transform.position);
             //ridai vita
@@ -106,13 +121,23 @@ public class PlayerScript : MonoBehaviour
                 animator.SetBool("Jump", true);
             }
 
+            // per il dash
+
+            if(Input.GetKeyDown(KeyCode.C) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
+            /////////////////
+
             if (Mathf.Abs(movement) > 0.1f)
             {
                 animator.SetFloat("RunSpeed", 1f);
+                
             }
             else if (Mathf.Abs(movement) < 0.1f)
             {
                 animator.SetFloat("RunSpeed", 0f);
+                
             }
         
 
@@ -122,8 +147,14 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    public void PlayWalkSound()
+    {
+        SoundEffectManager.Play("PlayerWalk");
+    }
+
     private void FixedUpdate()
     {
+        if (isDashing) return;
         if (canmove)
         {
             transform.position += new Vector3(movement, 0f, 0f) * Time.fixedDeltaTime * moveSpeed;
@@ -135,6 +166,7 @@ public class PlayerScript : MonoBehaviour
     void Jump()
     {
         rigidBody.AddForce(new Vector2(0f, jumpHeight),ForceMode2D.Impulse);
+        SoundEffectManager.Play("PlayerJump");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -148,6 +180,7 @@ public class PlayerScript : MonoBehaviour
 
     public void Attack()
     {
+        SoundEffectManager.Play("PlayerAttack");
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, attackLayer);
         if (collInfo)
         {
@@ -168,6 +201,7 @@ public class PlayerScript : MonoBehaviour
     {
         if(maxHealth <= 0) { return; }
         animator.SetTrigger("PTakesDamage");
+        SoundEffectManager.Play("PlayerHit");
         maxHealth -= damage;
 
     }
@@ -182,6 +216,7 @@ public class PlayerScript : MonoBehaviour
             }
             currentGems ++;
             other.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collected");
+            SoundEffectManager.Play("Gem");
             Destroy(other.gameObject,1f);
         }
         if (other.gameObject.tag == "VictoryPoint")
@@ -197,6 +232,7 @@ public class PlayerScript : MonoBehaviour
             }
             currentPotions++;
             other.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("PCollected");
+            SoundEffectManager.Play("Potion");
             Destroy(other.gameObject, 0.5f);
         }
         if(other.gameObject.tag == "Kneeler")
@@ -215,11 +251,12 @@ public class PlayerScript : MonoBehaviour
     }
 
     public void Die()
-    {
+    {     /* non più in uso 
         Debug.Log("Player Died");
         animator.SetBool("isDead", true);
         FindObjectOfType<GameManager>().isGameActive = false;
-        Destroy(this.gameObject);
+        Destroy(this.gameObject); */
+        DieByCollision();
     }
 
 
@@ -239,13 +276,20 @@ public class PlayerScript : MonoBehaviour
             StartCoroutine(Respawn());
             maxHealth--;
             if (currentGems > 0) currentGems--;
+            SoundEffectManager.Play("PlayerHit");
         }
         else
         { /*    implementare game over */
+            SoundEffectManager.Play("PlayerDie");
             active = false;
             collider.enabled = false;
             MiniJump();
-            Die();
+            StartCoroutine(Respawn());
+            maxHealth = vitaMassimaTotale;
+            currentGems = 0;
+            currentPotions = 0;
+             // non uso più Die();
+    
         }
 
     }
@@ -261,5 +305,24 @@ public class PlayerScript : MonoBehaviour
         active = true;
         collider.enabled=true;
         MiniJump();
+    }
+
+
+    // per il dash
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rigidBody.gravityScale;
+        rigidBody.gravityScale = 0f;
+        if(lookingRight) rigidBody.velocity = new Vector2(1 * dashingPower, 0f);
+        else rigidBody.velocity = new Vector2(-1 * dashingPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        rigidBody.gravityScale = originalGravity;
+        isDashing=false;
+        tr.emitting = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 }
