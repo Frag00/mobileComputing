@@ -10,11 +10,15 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] public SceneDataSO[] _SceneDataSOArray;
     private Dictionary<string, int> _sceneIdToIndexMap = new Dictionary<string, int>();
 
-   private void Start()
+
+
+     
+   private void Start() 
     {
         GameManager.instance.SceneLoader = this;
         PopulateSceneMappings();
     }
+
 
     private void PopulateSceneMappings()
     {

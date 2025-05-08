@@ -68,22 +68,45 @@ public class SaveSystem
 
         await GameManager.instance.SceneData.WaitForSceneToBeFullyLoaded();
 
+        /* MODIFICA PER VEDERE SE FUNZIONA NEL MENU */
+
+        await WaitForPlayerToExist();
+
+        ////////////////////////////////////////////
+
         GameManager.instance.Player.Load(_savedata.PlayerData);
     }
 
+    /***********************************************************************************************************************
+     * **********************************************************************************************************************
+     * FUNZIONE PER CERCARE DI RISOLVERE IL MENU
+     * ************************************************************************************************************************/
 
-
-    public static void Load()
+    private static async Task WaitForPlayerToExist()
     {
-        string saveContent = File.ReadAllText(SaveFileName());
-        _savedata = JsonUtility.FromJson<SaveData>(saveContent);
-        HandleLoadData();
+        while (GameManager.instance.Player == null) {
+            GameManager.instance.Player = GameObject.FindObjectOfType<PlayerScript>();
+            await Task.Yield();
+        }
     }
 
-    public static void HandleLoadData()
-    {
-        
-        GameManager.instance.SceneData.Load(_savedata.SceneData);
-        GameManager.instance.Player.Load(_savedata.PlayerData);
-    }
+    /***********************************************************************************************************************
+    * **********************************************************************************************************************
+    * ************************************************************************************************************************/
+
+
+
+public static void Load()
+{
+    string saveContent = File.ReadAllText(SaveFileName());
+    _savedata = JsonUtility.FromJson<SaveData>(saveContent);
+    HandleLoadData();
+}
+
+public static void HandleLoadData()
+{
+
+    GameManager.instance.SceneData.Load(_savedata.SceneData);
+    GameManager.instance.Player.Load(_savedata.PlayerData);
+}
 }

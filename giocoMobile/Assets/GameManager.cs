@@ -60,13 +60,13 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private async void SaveAsync()
+    public async void SaveAsync() // cambiato a public
     {
         _isSaving = true;
         await SaveSystem.SaveAsynchronously();
         _isSaving = false;
     }
-    private async void LoadAsync()
+    public async void LoadAsync() // cambiato a public
     {
         _isLoading = true;
         await SaveSystem.LoadAsync();

@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
     private bool canmove = true;
 
     /* per il dash */
-    private bool isDashUnlocked=false;
+    private bool isDashUnlocked;         //= false;
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 7f;
@@ -27,10 +27,10 @@ public class PlayerScript : MonoBehaviour
     // ***********************************************************
     public int vitaMassimaTotale = 5;
     public Text potionText;
-    public int currentPotions = 0;
+    public int currentPotions;    // = 0;
     public Text gemText;
-    public int currentGems = 0;
-    public int maxHealth = 5;
+    public int currentGems;    //  = 0;
+    public int maxHealth;    // = 5;
     public Text health;
     public float moveSpeed = 5f;
     private float movement;
@@ -43,7 +43,10 @@ public class PlayerScript : MonoBehaviour
     public Transform attackPoint;
     public float attackRadius = 1f;
     public LayerMask attackLayer;
+
     // Start is called before the first frame update
+
+
     void Start()
     {
         // per il trailrenderer
@@ -52,7 +55,15 @@ public class PlayerScript : MonoBehaviour
         // respawn e morte
         collider = GetComponent<Collider2D>();
         SetRespawnPoint(transform.position);
-    }
+
+
+        // setting dei valori statici del player 
+
+         maxHealth = StaticPlayerValues.maxHealth;
+         currentGems = StaticPlayerValues.currentGems;
+         currentPotions = StaticPlayerValues.currentPotions;
+         isDashUnlocked = StaticPlayerValues.isDashUnlocked;
+}
 
     // Update is called once per frame
     void Update()
@@ -91,6 +102,8 @@ public class PlayerScript : MonoBehaviour
             SetRespawnPoint(ultimoCheckPoint.transform.position);
             //ridai vita
             maxHealth = vitaMassimaTotale;
+            // Salvataggio dati 
+            GameManager.instance.SaveAsync();
 
         }
 
@@ -147,6 +160,11 @@ public class PlayerScript : MonoBehaviour
         {
             animator.SetTrigger("Attack");
         }
+
+        StaticPlayerValues.maxHealth = maxHealth;
+        StaticPlayerValues.currentGems = currentGems;
+        StaticPlayerValues.currentPotions = currentPotions;
+        StaticPlayerValues.isDashUnlocked = isDashUnlocked;
     }
 
     public void PlayWalkSound()
@@ -347,6 +365,15 @@ public class PlayerScript : MonoBehaviour
         currentGems = data.gems;
         currentPotions = data.potions;
         maxHealth = data.hearts;
+
+        /* MODIFICA DI PROVA PER MANTERE I DATI TRA LE SCENE MA NON FUNZIONA PIU IL CARICAMENTO
+         * ***********************************************************************************
+         * *********************************************************************************** */
+
+        StaticPlayerValues.maxHealth = maxHealth;
+        StaticPlayerValues.currentGems = currentGems;
+        StaticPlayerValues.currentPotions = currentPotions;
+        StaticPlayerValues.isDashUnlocked = isDashUnlocked; 
     }
 
     #endregion

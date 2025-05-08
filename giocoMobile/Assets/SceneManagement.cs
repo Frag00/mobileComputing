@@ -5,12 +5,13 @@ public class SceneManagement : MonoBehaviour
 {
    public void LoadLevel()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene(2);
     }
 
     public void PlayGame()
     {
         SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 0f;
     }
 
     public void LoadMenu()
@@ -22,5 +23,10 @@ public class SceneManagement : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Continue()
+    {
+        GameManager.instance.LoadAsync();
     }
 }
