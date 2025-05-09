@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
     private bool canmove = true;
 
     /* per il dash */
-    private bool isDashUnlocked;         //= false;
+    public bool isDashUnlocked;         //= false;
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 7f;
@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour
     private Vector2 respawnPoint;
     public Collider2D ultimoCheckPoint;
     // ***********************************************************
-    public int vitaMassimaTotale = 5;
+    public int vitaMassimaTotale = 10;
     public Text potionText;
     public int currentPotions;    // = 0;
     public Text gemText;
@@ -254,6 +254,10 @@ public class PlayerScript : MonoBehaviour
             {
                 collInfo.gameObject.GetComponent<FirstEnemySkeletonScript>().TakeDamage(1);
             }
+            if (collInfo.gameObject.GetComponent<BossScript>() != null)
+            {
+                collInfo.gameObject.GetComponent<BossScript>().TakeDamage(1);
+            }
         }
     }
 
@@ -306,6 +310,20 @@ public class PlayerScript : MonoBehaviour
             ultimoCheckPoint = other;
             
         }
+
+        if (other.gameObject.tag == "DashPU")
+        {
+            Collider2D powerUpCollider = other.GetComponent<Collider2D>();
+            if (powerUpCollider != null)
+            {
+                powerUpCollider.enabled = false;
+            }
+            isDashUnlocked=true;
+            other.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collected");
+            SoundEffectManager.Play("PowerUp");
+            Destroy(other.gameObject, 0.5f);
+        }
+
     }
 
     void OnTriggerExit2D(Collider2D other)

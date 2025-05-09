@@ -9,6 +9,7 @@ TagManager:
   - VictoryPoint
   - Potion
   - Kneeler
+  - DashPU
   layers:
   - Default
   - TransparentFX

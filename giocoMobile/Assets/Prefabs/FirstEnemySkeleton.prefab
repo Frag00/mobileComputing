@@ -215,7 +215,7 @@ MonoBehaviour:
   facingLeft: 1
   inRange: 0
   player: {fileID: 0}
-  attackRange: 10
+  attackRange: 5
   retrieveDistance: 1.7
   chaseSpeed: 3
   animator: {fileID: 124287786781224342}
