@@ -6,6 +6,20 @@ using UnityEngine.UI;
 public class PlayerScript : MonoBehaviour
 {
 
+    // per input da telefono tramite pulsanti
+    public bool dashButtonPressed = false;
+    public bool prayButtonPressed = false;
+    public bool jumpButtonPressed = false;
+    public bool attackButtonPressed = false;
+    public bool healButtonPressed = false;
+
+    // pulsanti per il movimento 
+    public bool LeftMovButtonPressed = false;
+    public bool RightMovButtonPressed = false;
+
+
+
+
     // per farlo stare fermo durante le animazioni di preghiera e pozione
     private bool canmove = true;
 
@@ -79,8 +93,9 @@ public class PlayerScript : MonoBehaviour
         // Per consumare una pozione e recuperare vita
         if(maxHealth<vitaMassimaTotale && currentPotions > 0)
         {
-            if (Input.GetKeyDown(KeyCode.N) && isGround)
+            if ((Input.GetKeyDown(KeyCode.N) || healButtonPressed ) && isGround)
             {
+                healButtonPressed = false; // reset pulsante
                 canmove = false;
                 animator.SetTrigger("Potion");
                 SoundEffectManager.Play("PlayerHeal");
@@ -90,8 +105,10 @@ public class PlayerScript : MonoBehaviour
         }
 
         // per il checkpoint
-        if (ultimoCheckPoint!=null && Input.GetKeyDown(KeyCode.F) && isGround)
+        if (ultimoCheckPoint!=null && (Input.GetKeyDown(KeyCode.F) || prayButtonPressed ) && isGround)
         {
+            //reset pulsante
+            prayButtonPressed = false;
             //disabilita movimento durante l'animazione
             canmove=false;
             //animazione preghiera
@@ -112,8 +129,20 @@ public class PlayerScript : MonoBehaviour
         gemText.text = currentGems.ToString();
         health.text = maxHealth.ToString();
 
-        
-            movement = Input.GetAxis("Horizontal");
+
+        /* IMPLEMENTAZIONE MOVIMENTO DA TELEFONO */
+
+        //movement = Input.GetAxis("Horizontal"); QUESTO ERA DA PC
+        movement = 0f;
+        if (LeftMovButtonPressed)
+        {
+            movement = -1f;
+        }
+        else if (RightMovButtonPressed)
+        {
+            movement = 1f;
+        }
+        /************************************************/
 
             if (movement < 0 && lookingRight)
             {
@@ -128,8 +157,9 @@ public class PlayerScript : MonoBehaviour
                     lookingRight = true;
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Space) && isGround && canmove)
+            if ((Input.GetKeyDown(KeyCode.Space) || jumpButtonPressed ) && isGround && canmove)
             {
+                jumpButtonPressed = false; // reset pulsante
                 Jump();
                 isGround = false;
                 animator.SetBool("Jump", true);
@@ -137,9 +167,9 @@ public class PlayerScript : MonoBehaviour
 
             // per il dash
 
-            if(Input.GetKeyDown(KeyCode.C) && canDash && canmove && isDashUnlocked)
+            if((Input.GetKeyDown(KeyCode.C) || dashButtonPressed ) && canDash && canmove && isDashUnlocked)
         {
-
+            dashButtonPressed = false;
             StartCoroutine(Dash());
         }
             /////////////////
@@ -156,8 +186,9 @@ public class PlayerScript : MonoBehaviour
             }
         
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) || attackButtonPressed)
         {
+            attackButtonPressed = false;
             animator.SetTrigger("Attack");
         }
 
@@ -166,6 +197,21 @@ public class PlayerScript : MonoBehaviour
         StaticPlayerValues.currentPotions = currentPotions;
         StaticPlayerValues.isDashUnlocked = isDashUnlocked;
     }
+
+    /* per trattare i pulsanti come trigger 
+     * ***********************************/
+
+    private void LateUpdate()
+    {
+         dashButtonPressed = false;
+         prayButtonPressed = false;
+         jumpButtonPressed = false;
+         attackButtonPressed = false;
+         healButtonPressed = false;
+    }
+
+    /**************************************
+     * ***********************************/
 
     public void PlayWalkSound()
     {
@@ -346,6 +392,39 @@ public class PlayerScript : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+
+    /* METODI PER ATTIVARE I PULSANTI 
+     * *****************************/
+    public void DashButtonPress()
+    {
+        dashButtonPressed = true;
+    }
+    public void JumpButtonPress()
+    {
+        jumpButtonPressed = true;
+    }
+    public void PrayButtonPress()
+    {
+        prayButtonPressed = true;
+    }
+    public void HealButtonPress()
+    {
+        healButtonPressed = true;
+    }
+    public void AttackButtonPress()
+    {
+        attackButtonPressed = true;
+    }
+
+    public void OnMoveLeftUp() => LeftMovButtonPressed = false;
+    public void OnMoveLeftDown() => LeftMovButtonPressed = true;
+    public void OnMoveRightUp() => RightMovButtonPressed = false;
+    public void OnMoveRightDown() => RightMovButtonPressed = true;
+
+
+
+    /********************************
+     * *****************************/
 
     #region Save And Load
 

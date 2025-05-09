@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a300c5803dc6c84d9ec175cf6d61769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 7703d519ef579dc4bb15a2cdaa21ce55, type: 2}
+  Data: {fileID: 11400000, guid: 43bf2679225804945931a569a319ff8c, type: 2}
 --- !u!4 &1983824609
 Transform:
   m_ObjectHideFlags: 0
@@ -1644,6 +1644,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3252685005133199713}
+    - target: {fileID: 3645861454357215658, guid: d380bbbbef74ad4479532f8c94eff40a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4226831675516984315, guid: d380bbbbef74ad4479532f8c94eff40a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1656,6 +1660,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3252685005133199713}
+    - target: {fileID: 4790807301432427413, guid: d380bbbbef74ad4479532f8c94eff40a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5939243970729352824, guid: d380bbbbef74ad4479532f8c94eff40a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
