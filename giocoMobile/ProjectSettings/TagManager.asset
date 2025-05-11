@@ -10,6 +10,7 @@ TagManager:
   - Potion
   - Kneeler
   - DashPU
+  - LastSceneTP
   layers:
   - Default
   - TransparentFX

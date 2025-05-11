@@ -8,6 +8,11 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void LoadLastLevel()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("SampleScene");

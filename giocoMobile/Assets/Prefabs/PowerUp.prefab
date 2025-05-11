@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7975624030672669573}
   - component: {fileID: 5486858611084723192}
   - component: {fileID: 1736287739689362533}
+  - component: {fileID: 5871675540450341947}
   m_Layer: 0
   m_Name: PowerUp
   m_TagString: DashPU
@@ -106,6 +107,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3739574, y: 1.3739572}
   m_EdgeRadius: 0
+--- !u!114 &5871675540450341947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988822327607729812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ae97f104e40714aac94a14fb573a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  powerUp: {fileID: 1988822327607729812}
 --- !u!1 &7289827230026863648
 GameObject:
   m_ObjectHideFlags: 0

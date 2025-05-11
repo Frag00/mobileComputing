@@ -139,6 +139,7 @@ public class BossScript : MonoBehaviour
 
         Debug.Log(this.transform.name + " Died");
         animator.SetBool("Died", true);
+        SoundEffectManager.Play("BossDie");
         Destroy(this.gameObject, 1);
 
     }

@@ -50,12 +50,12 @@ public class PlayerScript : MonoBehaviour
     private float movement;
     private bool lookingRight = true;
     public Rigidbody2D rigidBody;
-    public float jumpHeight = 5f;
+    public float jumpHeight = 15f;
     public bool isGround = true;
     public Animator animator;
 
     public Transform attackPoint;
-    public float attackRadius = 1f;
+    public float attackRadius = 0.5f;
     public LayerMask attackLayer;
 
     // Start is called before the first frame update
@@ -293,7 +293,13 @@ public class PlayerScript : MonoBehaviour
         {
             FindObjectOfType<SceneManagement>().LoadLevel();
         }
-        if(other.gameObject.tag == "Potion")
+
+        if (other.gameObject.tag == "LastSceneTP")
+        {
+            FindObjectOfType<SceneManagement>().LoadLastLevel();
+        }
+
+        if (other.gameObject.tag == "Potion")
         {
             Collider2D potionCollider = other.GetComponent<Collider2D>();
             if (potionCollider != null)

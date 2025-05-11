@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6155212825831687218}
   - component: {fileID: 7958200080005261725}
   - component: {fileID: 5570172591546774305}
-  - component: {fileID: 7603688957388835363}
+  - component: {fileID: 6014052761208592165}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -185,7 +185,7 @@ MonoBehaviour:
   tr: {fileID: 0}
   collider: {fileID: 0}
   ultimoCheckPoint: {fileID: 0}
-  vitaMassimaTotale: 5
+  vitaMassimaTotale: 10
   potionText: {fileID: 0}
   currentPotions: 0
   gemText: {fileID: 0}
@@ -223,7 +223,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!96 &7603688957388835363
+--- !u!96 &6014052761208592165
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0

@@ -13,12 +13,12 @@ public class FirstEnemySkeletonScript : MonoBehaviour
     public bool facingLeft = true;
     public bool inRange = false;
     public Transform player;
-    public float attackRange = 5f;
+    public float attackRange = 3.5f;
     public float retrieveDistance = 1.7f;
-    public float chaseSpeed = 4f;
+    public float chaseSpeed = 3f;
     public Animator animator;
     public Transform attackPoint;
-    public float attackRadius = 1f;
+    public float attackRadius = 0.8f;
     public LayerMask attackLayer;
 
     // Start is called before the first frame update

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class StaticPlayerValues
 {
-    public static int maxHealth = 5;
+    public static int maxHealth = 10;
     public static int currentGems = 0;
     public static int currentPotions = 0;
     public static bool isDashUnlocked = false;
