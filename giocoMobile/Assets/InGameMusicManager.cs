@@ -27,13 +27,14 @@ public class InGameMusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         if (backgroundMusic != null)
         {
             PlayBackgroundMusicInGame(false, backgroundMusic);
         }
-        musicSlider.onValueChanged.AddListener(delegate { SetVolume(musicSlider.value); });
+        musicSlider.onValueChanged.AddListener(delegate { SetVolume(musicSlider.value); }); 
     }
+
+    
 
     public static void SetVolume(float volume)
     {

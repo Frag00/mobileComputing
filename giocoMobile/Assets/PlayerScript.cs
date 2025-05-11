@@ -299,6 +299,11 @@ public class PlayerScript : MonoBehaviour
             FindObjectOfType<SceneManagement>().LoadLastLevel();
         }
 
+        if (other.gameObject.tag == "FineGioco")
+        {
+            FindObjectOfType<SceneManagement>().Quit();
+        }
+
         if (other.gameObject.tag == "Potion")
         {
             Collider2D potionCollider = other.GetComponent<Collider2D>();
