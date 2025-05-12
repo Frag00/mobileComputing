@@ -17,7 +17,7 @@ public class SoundEffectManager : MonoBehaviour
             instance = this;
             audioSource = GetComponent<AudioSource>();
             soundEffectLibrary = GetComponent<SoundEffectLibrary>();
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -43,11 +43,19 @@ public class SoundEffectManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /* **************************************************************************** QUI INIZIA LA MODIFICA *******************************/
+        sfxSlider.value=AudioSettingsManager.SFXVolume;
+        SetVolume(sfxSlider.value);
+        /* ******************************************************************************* QUI FINISCE LA MODIFICA ***************************/
         sfxSlider.onValueChanged.AddListener(delegate { OnValueChanged(); });
     }
 
     public void OnValueChanged()
     {
+        /* **************************************************************************** QUI INIZIA LA MODIFICA *******************************/
+        float volume = sfxSlider.value;
+        AudioSettingsManager.SFXVolume = volume;
+        /* ******************************************************************************* QUI FINISCE LA MODIFICA ***************************/
         SetVolume(sfxSlider.value);
     }
 }

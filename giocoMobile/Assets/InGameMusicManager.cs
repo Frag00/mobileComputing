@@ -31,6 +31,12 @@ public class InGameMusicManager : MonoBehaviour
         {
             PlayBackgroundMusicInGame(false, backgroundMusic);
         }
+
+
+        /* **************************************************************************** QUI INIZIA LA MODIFICA *******************************/
+        musicSlider.value = AudioSettingsManager.MusicVolume;
+        SetVolume(musicSlider.value);
+        /* ******************************************************************************* QUI FINISCE LA MODIFICA ***************************/
         musicSlider.onValueChanged.AddListener(delegate { SetVolume(musicSlider.value); }); 
     }
 
@@ -38,6 +44,9 @@ public class InGameMusicManager : MonoBehaviour
 
     public static void SetVolume(float volume)
     {
+        /* **************************************************************************** QUI INIZIA LA MODIFICA *******************************/
+        AudioSettingsManager.MusicVolume = volume;  
+        /* ******************************************************************************* QUI FINISCE LA MODIFICA ***************************/
         audioSource.volume = volume;
     }
 
